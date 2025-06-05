@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gửi Trúc Lệ 💖</title>
+  <style>
+    :root {
+      --pink: #ff69b4;
+      --dark-pink: #ff1493;
+      --bg: #fff0f5;
+      --text: #333;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffe4ec, #fff0f5);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #buttonContainer {
+      padding: 50px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    #revealButton {
+      font-size: 20px;
+      padding: 14px 28px;
+      background-color: var(--pink);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    #revealButton:hover {
+      background-color: var(--dark-pink);
+      transform: scale(1.05);
+    }
+
+    #surpriseContent {
+      display: none;
+      padding: 20px;
+      max-width: 720px;
+      width: 90%;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    h2 {
+      font-size: 26px;
+      text-align: center;
+      color: #e91e63;
+      margin-bottom: 25px;
+      animation: slideIn 1.2s ease;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 12px 0;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    #loveImage {
+      width: 80%;
+      max-width: 400px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      animation: fadeIn 2s ease;
+    }
+
+    .finalMessage {
+      margin-top: 40px;
+      padding: 25px 20px;
+      background: #fff0f5;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      font-size: 18px;
+      text-align: center;
+      font-style: italic;
+      color: #b03060;
+      line-height: 1.8;
+      position: relative;
+      animation: fadeInUp 2s ease;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: 0;
+      font-size: 20px;
+      animation: floatUp 4s ease forwards;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #revealButton {
+        font-size: 18px;
+        padding: 12px 22px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p, .finalMessage {
+        font-size: 16px;
+        padding: 0 5px;
+      }
+
+      .finalMessage {
+        padding: 15px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="buttonContainer">
+    <button id="revealButton">Nhấn Vào Đây Đi Em 💖</button>
+  </div>
+
+  <div id="surpriseContent">
+    <h2>Em yêu à 💌</h2>
+    <p>Mỗi ngày có em là một món quà kỳ diệu ✨</p>
+    <p>Anh luôn trân trọng từng khoảnh khắc bên em 🌟</p>
+    <p>Em là ánh sáng trong cuộc đời anh 💫</p>
+    <p>Cảm ơn em vì đã đến và ở lại 💕</p>
+    <p style="font-weight: bold; color: #e91e63;">Mãi mãi yêu em thật nhiều! 💖</p>
+
+    <img id="loveImage" src="Love1.jpg" alt="Tình yêu của anh">
+
+    <div class="finalMessage">
+      🌷Dù ta có cách xa bao nhiêu,🌷<br>
+      🌷hãy luôn nhớ rằng trái tim anh luôn hướng về em. 🌷<br><br>
+      🌷Mỗi buổi sáng thức dậy,🌷<br>
+      🌷anh nhớ nụ cười của em, nhớ ánh mắt long lanh ấy. 🌷<br><br>
+      🌷Hãy để tình yêu chúng ta thêm bền chặt qua từng ngày,🌷<br>
+      🌷dù gió mưa có đến, anh vẫn mong... 🌷<br><br>
+      🌷Mỗi khi em buồn, chỉ cần cuộn trang lên,🌷<br>
+      🌷để thấy rằng anh luôn đang nghĩ về em. 🌷
+    </div>
+  </div>
+
+  <!-- Nhạc nền -->
+  <audio id="backgroundMusic" src="music.mp3" loop></audio>
+
+  <script>
+    const button = document.getElementById("revealButton");
+    const content = document.getElementById("surpriseContent");
+    const buttonContainer = document.getElementById("buttonContainer");
+    const music = document.getElementById("backgroundMusic");
+
+    button.addEventListener("click", function () {
+      content.style.display = "block";
+      buttonContainer.style.display = "none";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Phát nhạc
+      music.play().catch(e => console.log("Trình duyệt chặn tự động phát:", e));
+    });
+
+    // Trái tim 💖 bay
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 10 + 20 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 500);
+
+      setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💕";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 10 + 20 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 500);
+
+      setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 10 + 20 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 500);
+
+          setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💓";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 10 + 20 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 500);
+
+
+        setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💘";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 10 + 20 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 500);
+
+  </script>
+
+</body>
+</html>
